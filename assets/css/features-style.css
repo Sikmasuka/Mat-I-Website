@@ -1,0 +1,75 @@
+/* ==========================================================================
+   MAT-I FEATURE SHORTCUT CARDS STYLES
+   ========================================================================== */
+
+.features-overlap-container {
+  margin-top: -1.75rem;
+  position: relative;
+  z-index: 20;
+}
+
+.features-shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+@media (min-width: 1024px) {
+  .features-shortcut-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.feature-shortcut-card {
+  height: 145px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(16, 42, 87, 0.12);
+}
+
+.feature-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.feature-shortcut-card:hover .feature-card-bg {
+  transform: scale(1.08);
+}
+
+.feature-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 42, 87, 0.95) 0%, rgba(16, 42, 87, 0.35) 100%);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.feature-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.feature-card-desc {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-shortcut-card:hover .feature-card-desc {
+  opacity: 1;
+}

@@ -1,0 +1,272 @@
+/* ==========================================================================
+   MAT-I NATIONAL HIGH SCHOOL — MAIN STYLESHEET (MODULAR IMPORTS)
+   ========================================================================== */
+
+/* Design Tokens & Animations */
+:root {
+  --navy-primary: #102A57;
+  --royal-blue: #173A72;
+  --dark-navy: #0b1e3d;
+  --green-cta: #FF851A;
+  --green-hover: #E06F0B;
+  --orange-primary: #FF851A;
+  --orange-hover: #E06F0B;
+  --orange-text: #C25E00;
+  --charcoal-text: #1E293B;
+  --muted-text: #64748B;
+  --border-color: #CBD5E1;
+  --light-bg: #EEF2F6;
+  --page-bg: #F1F5F9;
+  --white: #ffffff;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 10px -1px rgba(15, 23, 42, 0.12), 0 2px 4px -2px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.16), 0 4px 8px -2px rgba(15, 23, 42, 0.08);
+  --shadow-hard: 0 4px 14px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.04);
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal-text);
+  background-color: var(--page-bg);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 92%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: clamp(0.75rem, 2vw, 1.25rem);
+  padding-right: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Keyframe & Scroll Reveal Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Bidirectional Scroll Reveal System (Scroll Down & Scroll Up) */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.985);
+  transition: opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+/* State when scrolled past into view (visible) */
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* When scrolling back UP and leaving the viewport */
+.scroll-reveal.scroll-exit-top {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.985);
+}
+
+/* When scrolling DOWN and leaving downwards */
+.scroll-reveal.scroll-exit-bottom {
+  opacity: 0;
+  transform: translateY(32px) scale(0.985);
+}
+
+/* Directional Stagger Delay Utilities */
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+.stagger-5 { transition-delay: 0.40s; }
+
+/* MODULAR COMPONENT IMPORTS */
+@import url('header-style.css');
+@import url('hero-style.css');
+@import url('features-style.css');
+@import url('news-style.css');
+@import url('about-style.css');
+@import url('school-logo-style.css');
+@import url('mission-vision-style.css');
+@import url('history-style.css');
+@import url('organigram-style.css');
+@import url('video-style.css');
+@import url('programs-style.css');
+@import url('app-style.css');
+@import url('footer-style.css');
+
+/* News Filter Pills */
+.news-filter-btn {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 9999px;
+  padding: 5px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.news-filter-btn:hover {
+  border-color: #3DBE63;
+  color: #102A57;
+}
+
+.news-filter-btn.active {
+  background: #102A57;
+  color: #FFFFFF;
+  border-color: #102A57;
+}
+
+/* Modals */
+.mat-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 27, 54, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+.mat-modal-box {
+  background: #FFFFFF;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  border: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #F1F5F9;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modal-dept-badge {
+  display: inline-block;
+  background: #E8F7ED;
+  color: #16A34A;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.modal-title-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #102A57;
+  margin: 0;
+}
+
+.mat-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #64748B;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.mat-modal-close:hover {
+  color: #102A57;
+}
+
+.mat-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.modal-subjects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-subjects-list li {
+  font-size: 13px;
+  color: #475569;
+  padding: 6px 0;
+  border-bottom: 1px dashed #F1F5F9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-subjects-list li::before {
+  content: '✓';
+  color: #3DBE63;
+  font-weight: 800;
+}
+
+.mat-modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #F1F5F9;
+  background: #F8FAFC;
+  border-radius: 0 0 16px 16px;
+}

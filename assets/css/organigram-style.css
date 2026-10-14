@@ -1,0 +1,634 @@
+/* ==========================================================================
+   PURE VERTICAL CONNECTED TREE STYLING — MAT-I NHS (DISTINCT VISIBLE BORDERS)
+   ========================================================================== */
+
+/* Institutional School Header */
+.school-org-header-section {
+	background: #FFFFFF;
+	padding: 1.5rem 1.25rem;
+	border-bottom: 2px solid #CBD5E1;
+	box-shadow: 0 4px 12px rgba(16, 42, 87, 0.04);
+}
+
+.school-org-header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.school-org-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: clamp(17px, 2.2vw, 24px);
+	font-weight: 800;
+	color: #102A57;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	margin: 0;
+	line-height: 1.3;
+	text-align: center;
+}
+
+/* Hide Footer specifically on Organigram Page */
+body.page-template-page-organigram footer#contact,
+body.page-template-page-organigram-php footer#contact,
+body.page-template-page-organigram .footer-dark-bg,
+body.page-template-page-organigram-php .footer-dark-bg,
+.organigram-page-main ~ footer#contact,
+.organigram-page-main ~ .footer-dark-bg,
+.organigram-page-main ~ footer {
+	display: none !important;
+}
+
+.organigram-page-wrapper {
+	background: #EBF0F7;
+	padding: 2.5rem 0 5rem 0;
+}
+
+.organigram-section-heading {
+	text-align: center;
+	max-width: 680px;
+	margin: 0 auto 1.5rem auto;
+}
+
+/* Search Bar */
+.org-search-wrap {
+	max-width: 420px;
+	margin: 0 auto 2.5rem auto;
+	position: relative;
+}
+
+.org-search-input {
+	width: 100%;
+	padding: 9px 16px 9px 38px;
+	font-size: 13.5px;
+	border: 1.5px solid #CBD5E1;
+	border-radius: 9999px;
+	outline: none;
+	background: #FFFFFF;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+	transition: all 0.2s ease;
+	font-family: inherit;
+}
+
+.org-search-input:focus {
+	border-color: #FF851A;
+	box-shadow: 0 0 0 3px rgba(255, 133, 26, 0.15);
+}
+
+/* ==========================================================================
+   VERTICAL TREE HIERARCHY CANVAS
+   ========================================================================== */
+.org-tree-canvas {
+	width: 100%;
+	padding: 0.5rem 0.5rem 3rem 0.5rem;
+}
+
+.org-tree-flow {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* Common Card Styling with Clear Crisp Borders */
+.org-card {
+	background: #FFFFFF;
+	border: 1.5px solid #CBD5E1; /* Clear visible crisp border */
+	border-radius: 10px;
+	padding: 0.65rem 0.85rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	box-shadow: 0 3px 10px rgba(16, 42, 87, 0.05);
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	cursor: pointer;
+}
+
+.org-card:hover {
+	transform: scale(1.06) translateY(-4px);
+	box-shadow: 0 14px 28px rgba(16, 42, 87, 0.15);
+	z-index: 20;
+}
+
+.org-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	overflow: hidden;
+}
+
+.org-role {
+	font-size: 9px;
+	font-weight: 700;
+	color: #64748B;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	line-height: 1.2;
+	margin-bottom: 3px;
+	display: block;
+}
+
+.org-name {
+	font-family: 'Inter', sans-serif;
+	font-size: 11.5px;
+	font-weight: 800;
+	color: #0F172A;
+	line-height: 1.25;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+	text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   1. LEVEL 1: PRINCIPAL APEX
+   -------------------------------------------------------------------------- */
+.level-principal-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card-principal {
+	border: 2.5px solid #FF851A; /* Vibrant distinct orange border */
+	padding: 0.85rem 1.85rem;
+	border-radius: 14px;
+	box-shadow: 0 8px 24px rgba(255, 133, 26, 0.18);
+	width: auto;
+	cursor: pointer;
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.card-principal:hover {
+	transform: scale(1.07) translateY(-4px);
+	box-shadow: 0 16px 36px rgba(255, 133, 26, 0.32);
+	z-index: 20;
+}
+
+.card-principal:hover .org-avatar {
+	transform: scale(1.1);
+}
+
+.card-principal .org-avatar {
+	width: 44px;
+	height: 44px;
+	background: #FFF3EB;
+	border: 2px solid #FF851A;
+	color: #FF851A;
+	font-size: 14px;
+}
+
+.card-principal .org-name {
+	font-size: 14px;
+	font-weight: 800;
+	color: #102A57;
+}
+
+.card-principal .org-role {
+	color: #FF851A;
+	font-weight: 800;
+	font-size: 10.5px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* Vertical stem down to level 2 */
+.stem-vertical {
+	width: 2px;
+	height: 24px;
+	background: #94A3B8;
+}
+
+/* --------------------------------------------------------------------------
+   2. LEVEL 2: ADMIN LEVEL (DISTINCT AMBER/ORANGE ACCENT BORDER)
+   -------------------------------------------------------------------------- */
+.level-admin-branch {
+	width: 78%;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.admin-cards-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+	width: 100%;
+	position: relative;
+}
+
+.admin-card-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+/* Card top stem */
+.admin-card-col::before {
+	content: '';
+	width: 2px;
+	height: 20px;
+	background: #94A3B8;
+}
+
+/* Card 1 (Leftmost): Top-Right Corner elbow */
+.admin-card-col:first-child::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: -1.5rem; /* Extends completely across the grid gap to touch column 2 */
+	height: 2px;
+	background: #94A3B8;
+}
+
+/* Card 2 (Middle): Line touching left and right gaps seamlessly */
+.admin-card-col:nth-child(2)::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: #94A3B8;
+}
+
+/* Card 3 (Rightmost): Top-Left Corner elbow */
+.admin-card-col:last-child::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -1.5rem; /* Extends completely across the grid gap to touch column 2 */
+	right: 50%;
+	height: 2px;
+	background: #94A3B8;
+}
+
+/* Admin Card Border & Styling */
+.card-admin {
+	border: 1.5px solid #FED7AA; /* Warm soft orange/amber border */
+	background: #FFFFFF;
+}
+
+.card-admin:hover {
+	border-color: #FF851A;
+}
+
+.card-admin .org-avatar {
+	background: #FFF3EB;
+	border: 1.5px solid #FFD4B2;
+	color: #C25E00;
+}
+
+.card-admin .org-role {
+	color: #C25E00;
+	font-weight: 700;
+}
+
+/* Vertical trunk line below middle admin card */
+.admin-to-faculty-trunk {
+	width: 2px;
+	height: 28px;
+	background: #94A3B8;
+	margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. LEVEL 3: FACULTY LEVEL (PERFECT 2-BRANCH SEAMLESS LINES)
+   -------------------------------------------------------------------------- */
+.level-faculty-wrapper {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.faculty-branches-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2.25rem;
+	width: 100%;
+	position: relative;
+}
+
+.faculty-dept-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+/* Dept top stem */
+.faculty-dept-col::before {
+	content: '';
+	width: 2px;
+	height: 20px;
+	background: #94A3B8;
+}
+
+/* JHS Left Branch: Top-Right Corner elbow meeting center gap */
+.faculty-dept-col:first-child::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: -1.125rem;
+	height: 2px;
+	background: #94A3B8;
+}
+
+/* SHS Right Branch: Top-Left Corner elbow meeting center gap */
+.faculty-dept-col:last-child::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -1.125rem;
+	right: 50%;
+	height: 2px;
+	background: #94A3B8;
+}
+
+/* Department Badge Header with crisp border */
+.dept-badge {
+	padding: 0.5rem 1.25rem;
+	border-radius: 9999px;
+	color: #FFFFFF;
+	font-family: 'Poppins', sans-serif;
+	font-size: 12.5px;
+	font-weight: 700;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	border: 1.5px solid rgba(255,255,255,0.25);
+	z-index: 3;
+}
+
+.dept-badge-jhs {
+	background: linear-gradient(135deg, #0284C7, #0369A1);
+}
+
+.dept-badge-shs {
+	background: linear-gradient(135deg, #7C3AED, #6D28D9);
+}
+
+/* Line down from Dept Badge to Department 2-column fork */
+.dept-stem-vertical {
+	width: 2px;
+	height: 18px;
+	background: #94A3B8;
+}
+
+/* Department Grid (2 Columns on Medium/Laptop, 3 Columns on Big Screens) */
+.dept-columns-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.85rem;
+	width: 100%;
+	position: relative;
+}
+
+/* Big Screen (>= 1400px): 3 Columns */
+@media (min-width: 1400px) {
+	.dept-columns-grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75rem;
+	}
+}
+
+.faculty-stream-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	position: relative;
+}
+
+/* Stream top stem into first card */
+.faculty-stream-col::before {
+	content: '';
+	width: 2px;
+	height: 16px;
+	background: #94A3B8;
+}
+
+/* Column 1 (Leftmost): Top-Right Corner elbow meeting middle stream */
+.faculty-stream-col:first-child::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: -0.85rem;
+	height: 2px;
+	background: #94A3B8;
+}
+
+/* Column 2 (Middle): Line touching left and right gaps seamlessly */
+.faculty-stream-col:nth-child(2)::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: #94A3B8;
+}
+
+/* Column 3 (Rightmost): Top-Left Corner elbow meeting middle stream */
+.faculty-stream-col:last-child::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -0.85rem;
+	right: 50%;
+	height: 2px;
+	background: #94A3B8;
+}
+
+/* Vertical items stream */
+.faculty-vertical-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	position: relative;
+}
+
+/* Direct top stem into card */
+.faculty-vertical-item::before {
+	content: '';
+	width: 2px;
+	height: 14px;
+	background: #94A3B8;
+}
+
+/* JHS Leaf borders */
+.card-jhs {
+	border: 1.5px solid #BAE6FD; /* Crisp cyan/sky border */
+	background: #FFFFFF;
+}
+
+.card-jhs:hover {
+	border-color: #0284C7;
+	box-shadow: 0 6px 16px rgba(2, 132, 199, 0.15);
+}
+
+/* SHS Leaf borders */
+.card-shs {
+	border: 1.5px solid #DDD6FE; /* Crisp purple/violet border */
+	background: #FFFFFF;
+}
+
+.card-shs:hover {
+	border-color: #7C3AED;
+	box-shadow: 0 6px 16px rgba(124, 58, 237, 0.15);
+}
+
+/* Bottom Navigation Action Links */
+.organigram-bottom-nav {
+	text-align: center;
+	margin-top: 3.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.btn-org-primary {
+	background-color: #FF851A;
+	color: #FFFFFF !important;
+	font-weight: 700;
+	font-size: 13.5px;
+	padding: 10px 22px;
+	border-radius: 8px;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	box-shadow: 0 4px 14px rgba(255, 133, 26, 0.28);
+	transition: all 0.2s ease;
+}
+
+.btn-org-primary:hover {
+	background-color: #E06F0B;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(255, 133, 26, 0.4);
+}
+
+.btn-org-secondary {
+	background-color: #FFFFFF;
+	color: #102A57 !important;
+	border: 1.5px solid #CBD5E1;
+	font-weight: 700;
+	font-size: 13.5px;
+	padding: 9px 20px;
+	border-radius: 8px;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	box-shadow: 0 2px 6px rgba(16, 42, 87, 0.05);
+	transition: all 0.2s ease;
+}
+
+.btn-org-secondary:hover {
+	border-color: #102A57;
+	color: #FF851A !important;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(16, 42, 87, 0.1);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1199px) {
+	.org-tree-flow {
+		max-width: 100%;
+	}
+	.admin-cards-row {
+		gap: 1rem;
+	}
+	/* Exactly 2 Columns on Tablet / Medium Screen */
+	.dept-columns-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.75rem;
+	}
+}
+
+@media (max-width: 980px) {
+	.org-tree-flow {
+		min-width: 100%;
+	}
+	.admin-cards-row {
+		grid-template-columns: 1fr;
+		width: 100%;
+		max-width: 360px;
+		margin: 0 auto;
+	}
+	.faculty-branches-row {
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+	.dept-columns-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.75rem;
+	}
+	.admin-card-col::after, .faculty-dept-col::after, .faculty-stream-col::after {
+		display: none;
+	}
+}
+
+/* Exactly 1 Column on Mobile Devices */
+@media (max-width: 767px) {
+	.org-tree-canvas {
+		padding: 0.5rem 0.25rem 2rem 0.25rem;
+	}
+	.org-tree-flow {
+		min-width: 100%;
+		max-width: 100%;
+	}
+	.admin-cards-row {
+		grid-template-columns: 1fr;
+		width: 100%;
+		max-width: 320px;
+		margin: 0 auto;
+		gap: 0.75rem;
+	}
+	.faculty-branches-row {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		width: 100%;
+	}
+	.faculty-dept-col {
+		width: 100%;
+	}
+	.dept-columns-grid {
+		grid-template-columns: 1fr;
+		width: 100%;
+		max-width: 320px;
+		margin: 0 auto;
+		gap: 0.65rem;
+	}
+	.stem-vertical, .dept-stem-vertical, .admin-to-faculty-trunk,
+	.admin-card-col::before, .admin-card-col::after,
+	.faculty-dept-col::before, .faculty-dept-col::after {
+		display: none;
+	}
+}

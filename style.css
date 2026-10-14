@@ -1,0 +1,122 @@
+/*
+Theme Name: Mat-I
+Theme URI: http://localhost/wordpress
+Author: Mat-I Development Team
+Author URI: http://localhost/wordpress
+Description: A modern, high-performance, custom WordPress theme for Mat-I, featuring rich glassmorphism aesthetics, responsive layouts, dynamic WordPress core integration, and optimized typography.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mat-i
+Tags: custom-theme, responsive-layout, dark-mode, glassmorphism, high-aesthetics, modern
+*/
+
+/* ==========================================================================
+   DESIGN SYSTEM & CSS VARIABLES
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --mat-bg-main: #0B0F17;
+  --mat-bg-surface: #131B2A;
+  --mat-bg-surface-elevated: #1A2436;
+  --mat-bg-glass: rgba(19, 27, 42, 0.75);
+  --mat-border-color: rgba(255, 255, 255, 0.08);
+  --mat-border-glow: rgba(99, 102, 241, 0.3);
+
+  /* Primary & Accent Colors */
+  --mat-primary: #6366F1;
+  --mat-primary-hover: #4F46E5;
+  --mat-primary-glow: rgba(99, 102, 241, 0.25);
+  --mat-accent: #06B6D4;
+  --mat-accent-hover: #0891B2;
+  --mat-success: #10B981;
+  --mat-warning: #F59E0B;
+
+  /* Typography */
+  --mat-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mat-font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --mat-text-heading: #F9FAFB;
+  --mat-text-body: #9CA3AF;
+  --mat-text-muted: #6B7280;
+
+  /* Shadows & Effects */
+  --mat-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --mat-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --mat-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --mat-shadow-glow: 0 0 25px rgba(99, 102, 241, 0.3);
+
+  /* Layout Constants (Compact for 14" Medium Screen & Responsive) */
+  --mat-radius-sm: 8px;
+  --mat-radius-md: 12px;
+  --mat-radius-lg: 18px;
+  --mat-radius-full: 9999px;
+
+  --mat-container-max: 1180px;
+  --mat-header-height: 64px;
+
+  --mat-transition-fast: 0.2s ease;
+  --mat-transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--mat-font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--mat-text-body);
+  background-color: #F1F5F9;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow-x: hidden;
+  background-color: #F1F5F9;
+}
+
+body > * {
+  width: 100%;
+}
+
+a {
+  color: var(--mat-primary);
+  text-decoration: none;
+  transition: color var(--mat-transition-fast);
+}
+
+a:hover {
+  color: var(--mat-accent);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--mat-font-heading);
+  color: var(--mat-text-heading);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 92%;
+  max-width: var(--mat-container-max);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+

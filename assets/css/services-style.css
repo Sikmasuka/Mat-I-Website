@@ -1,0 +1,451 @@
+/* ==========================================================================
+   MAT-I SCHOOL SERVICES PAGE STYLES
+   ========================================================================== */
+
+.services-hero-wrapper {
+  position: relative;
+  background-color: #102A57;
+  color: #FFFFFF;
+  padding: 2.25rem 0 2rem;
+  overflow: hidden;
+}
+
+.services-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  filter: saturate(0.8);
+}
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16, 42, 87, 0.95) 0%, rgba(13, 31, 60, 0.92) 100%);
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #93C5FD;
+  margin-bottom: 1.25rem;
+}
+
+.services-breadcrumbs a {
+  color: #BFDBFE;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.services-breadcrumbs a:hover {
+  color: #FFFFFF;
+}
+
+.services-breadcrumbs .separator {
+  opacity: 0.5;
+}
+
+.services-breadcrumbs .active-crumb {
+  color: #FF851A;
+  font-weight: 600;
+}
+
+/* HERO SEARCH BAR */
+.hero-search-wrapper {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-search-input:focus {
+  background: #FFFFFF !important;
+  border-color: #FF851A !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), 0 0 0 4px rgba(255, 133, 26, 0.25) !important;
+}
+
+.services-search-box {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+}
+
+.services-search-box input {
+  width: 100%;
+  padding: 10px 14px 10px 40px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1E293B;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.services-search-box input:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.services-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748B;
+  pointer-events: none;
+}
+
+.services-count-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: #102A57;
+  background: #EFF6FF;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid #BFDBFE;
+}
+
+/* SERVICES ACCORDION LIST */
+.services-section {
+  padding: 3rem 0 5rem;
+  background-color: #EBF0F7;
+}
+
+.services-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.service-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover {
+  border-color: #102A57;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(16, 42, 87, 0.16), 0 4px 8px rgba(16, 42, 87, 0.08);
+}
+
+.service-card.active {
+  border: 2px solid #102A57;
+  box-shadow: 0 14px 32px rgba(16, 42, 87, 0.18), 0 4px 10px rgba(16, 42, 87, 0.08);
+}
+
+/* CARD HEADER / TRIGGER - CLEAN, REFINED & EYE-FRIENDLY */
+.service-header-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  background: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.service-header-trigger:hover {
+  background-color: #F8FAFC;
+}
+
+.service-card.active .service-header-trigger {
+  background-color: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.service-title-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+  flex: 1;
+}
+
+.service-number-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #DBEAFE;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.service-card.active .service-number-badge {
+  background: #FFF7ED;
+  color: #EA580C;
+  border-color: #FFEDD5;
+}
+
+.service-card-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.45rem;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.service-header-trigger:hover .service-card-title,
+.service-card.active .service-card-title {
+  color: #102A57;
+}
+
+.service-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.service-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.service-badge.badge-office {
+  background: #F1F5F9;
+  color: #334155;
+  border: 1px solid #E2E8F0;
+}
+
+.service-badge.badge-time {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+.service-badge.badge-fee {
+  background: #DCFCE7;
+  color: #166534;
+  border: 1px solid #BBF7D0;
+}
+
+.service-toggle-chevron {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, color 0.2s;
+}
+
+.service-header-trigger:hover .service-toggle-chevron {
+  background: #E2E8F0;
+  color: #102A57;
+}
+
+.service-card.active .service-toggle-chevron {
+  transform: rotate(180deg);
+  background: #EFF6FF;
+  color: #2563EB;
+  border-color: #BFDBFE;
+}
+
+/* CARD BODY / DETAILS - CLEAN CRISP WHITE */
+.service-body {
+  display: none;
+  padding: 1.75rem;
+  background-color: #FFFFFF;
+}
+
+.service-card.active .service-body {
+  display: block;
+}
+
+/* INFO GRID */
+.service-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.service-info-box {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.service-info-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748B;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.service-info-value {
+  font-size: 13.5px;
+  color: #1E293B;
+  line-height: 1.5;
+}
+
+.service-requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-requirements-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.4rem;
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.service-requirements-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10B981;
+  font-weight: 700;
+}
+
+/* PROCEDURE TABLE */
+.procedure-table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+}
+
+.procedure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.procedure-table th {
+  background-color: #102A57;
+  color: #FFFFFF;
+  padding: 10px 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.procedure-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #E2E8F0;
+  color: #334155;
+  vertical-align: top;
+}
+
+.procedure-table tr:nth-child(even) td {
+  background-color: #F8FAFC;
+}
+
+.procedure-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* HELPDESK BANNER */
+.services-helpdesk-card {
+  background: linear-gradient(135deg, #102A57 0%, #1E3A8A 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  color: #FFFFFF;
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.helpdesk-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.helpdesk-content p {
+  font-size: 14px;
+  color: #BFDBFE;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.helpdesk-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.helpdesk-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+  .service-header-trigger {
+    padding: 1rem;
+  }
+  .service-body {
+    padding: 0 1rem 1rem;
+  }
+  .service-card-title {
+    font-size: 15px;
+  }
+}
+
+/* Hide Footer on Services Page */
+body.page-template-page-services footer#contact,
+body.page-template-page-services-php footer#contact,
+body.page-template-page-services .footer-dark-bg,
+body.page-template-page-services-php .footer-dark-bg {
+  display: none !important;
+}
+

@@ -1,0 +1,300 @@
+/* ==========================================================================
+   HISTORY & HERITAGE PAGE STYLING — MAT-I NATIONAL HIGH SCHOOL
+   ========================================================================== */
+
+.history-hero-section {
+	position: relative;
+	background: linear-gradient(135deg, #0A1B36 0%, #102A57 55%, #183B70 100%);
+	padding: 2.75rem 0 2.25rem 0;
+	overflow: hidden;
+	color: #FFFFFF;
+}
+
+.history-hero-grid-pattern {
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+	background-size: 20px 20px;
+	pointer-events: none;
+}
+
+.history-breadcrumbs {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 12px;
+	color: rgba(255, 255, 255, 0.65);
+	margin-bottom: 1rem;
+}
+
+.history-breadcrumbs a {
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+.history-breadcrumbs a:hover {
+	color: #FF851A;
+}
+
+.history-hero-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	background: rgba(255, 133, 26, 0.15);
+	border: 1px solid rgba(255, 133, 26, 0.35);
+	padding: 4px 10px;
+	border-radius: 9999px;
+	font-size: 11px;
+	font-weight: 700;
+	color: #FF851A;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 0.85rem;
+}
+
+.history-hero-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: clamp(24px, 3.2vw, 38px);
+	font-weight: 800;
+	line-height: 1.22;
+	color: #FFFFFF;
+	margin-bottom: 0.75rem;
+}
+
+.history-hero-lead {
+	font-size: 14.5px;
+	color: rgba(255, 255, 255, 0.8);
+	line-height: 1.6;
+	max-width: 720px;
+	margin: 0;
+}
+
+/* History Content Container */
+.history-page-wrapper {
+	background: #EEF2F6;
+	padding: 3.5rem 0 5rem 0;
+}
+
+/* Timeline Layout */
+.timeline-section-header {
+	text-align: center;
+	max-width: 680px;
+	margin: 0 auto 2.5rem auto;
+}
+
+.timeline-pill {
+	display: inline-block;
+	background: #FFF3EB;
+	color: #D96900;
+	border: 1px solid #FFD4B2;
+	font-size: 11.5px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 4px 12px;
+	border-radius: 9999px;
+	margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: clamp(22px, 2.8vw, 30px);
+	font-weight: 800;
+	color: #102A57;
+	margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+	font-size: 14px;
+	color: #64748B;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* Timeline Vertical Line & Cards */
+.timeline-container {
+	position: relative;
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 1rem 0;
+}
+
+.timeline-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 28px;
+	width: 2px;
+	background: #E2E8F0;
+}
+
+@media (min-width: 768px) {
+	.timeline-container::before {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.timeline-node-item {
+	position: relative;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 768px) {
+	.timeline-node-item {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.timeline-node-item:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+}
+
+.timeline-marker-pin {
+	position: absolute;
+	left: 17px;
+	top: 0;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: #FF851A;
+	border: 4px solid #FFFFFF;
+	box-shadow: 0 0 0 2px #FF851A, 0 4px 8px rgba(255,133,26,0.3);
+	z-index: 2;
+}
+
+@media (min-width: 768px) {
+	.timeline-marker-pin {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.timeline-card-box {
+	background: #FFFFFF;
+	border: 1.5px solid #CBD5E1;
+	border-radius: 14px;
+	padding: 1.4rem 1.5rem;
+	margin-left: 55px;
+	box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+	.timeline-card-box {
+		width: 44%;
+		margin-left: 0;
+	}
+}
+
+.timeline-card-box:hover {
+	transform: translateY(-2px);
+	border-color: #94A3B8;
+	box-shadow: 0 12px 24px rgba(16, 42, 87, 0.14);
+}
+
+.timeline-year-chip {
+	display: inline-block;
+	font-family: 'Poppins', sans-serif;
+	font-size: 13px;
+	font-weight: 800;
+	color: #102A57;
+	background: #EEF2F6;
+	border: 1px solid #CBD5E1;
+	padding: 3px 10px;
+	border-radius: 6px;
+	margin-bottom: 0.5rem;
+}
+
+.timeline-card-heading {
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	color: #102A57;
+	margin-bottom: 0.5rem;
+}
+
+.timeline-card-text {
+	font-size: 13.5px;
+	color: #475569;
+	line-height: 1.6;
+	margin: 0;
+}
+
+/* History Overview & Narrative */
+.history-narrative-card {
+	background: #FFFFFF;
+	border: 1.5px solid #CBD5E1;
+	border-radius: 16px;
+	padding: 2.25rem 2.5rem;
+	box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+	margin-bottom: 3rem;
+}
+
+.history-quote-box {
+	border-left: 4px solid #FF851A;
+	padding-left: 1.25rem;
+	margin: 1.5rem 0;
+	font-style: italic;
+	color: #334155;
+	font-size: 14.5px;
+	line-height: 1.7;
+}
+
+/* Bottom Navigation Links (Matching Organigram Page) */
+.organigram-bottom-nav {
+	margin-top: 3.5rem;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.btn-org-primary {
+	background-color: #FF851A;
+	color: #FFFFFF !important;
+	font-weight: 700;
+	font-size: 13.5px;
+	padding: 10px 22px;
+	border-radius: 8px;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	box-shadow: 0 4px 14px rgba(255, 133, 26, 0.28);
+	transition: all 0.2s ease;
+}
+
+.btn-org-primary:hover {
+	background-color: #E06F0B;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(255, 133, 26, 0.4);
+}
+
+.btn-org-secondary {
+	background-color: #FFFFFF;
+	color: #102A57 !important;
+	border: 1.5px solid #CBD5E1;
+	font-weight: 700;
+	font-size: 13.5px;
+	padding: 9px 20px;
+	border-radius: 8px;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	box-shadow: 0 2px 6px rgba(16, 42, 87, 0.05);
+	transition: all 0.2s ease;
+}
+
+.btn-org-secondary:hover {
+	border-color: #102A57;
+	color: #FF851A !important;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(16, 42, 87, 0.1);
+}
+

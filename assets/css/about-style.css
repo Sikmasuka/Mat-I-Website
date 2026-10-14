@@ -1,0 +1,488 @@
+/* ==========================================================================
+   MAT-I INSTITUTIONAL, VALUES & SERVICES HUB STYLES
+   ========================================================================== */
+
+/* 1. DepEd Core Values & Institutional Overview */
+.institutional-section {
+  background-color: var(--page-bg);
+  padding: 4.5rem 0;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.core-values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .core-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .core-values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.core-value-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.core-value-card:hover {
+  transform: translateY(-4px);
+  border-color: #FED7AA;
+  box-shadow: 0 12px 24px rgba(255, 133, 26, 0.12), 0 4px 10px rgba(15, 23, 42, 0.06);
+}
+
+.core-value-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #FFF7ED;
+  color: #EA580C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: all 0.25s ease;
+  border: 1px solid #FFEDD5;
+}
+
+.core-value-card:hover .core-value-icon {
+  background: #FF851A;
+  color: #FFFFFF;
+  border-color: #FF851A;
+  box-shadow: 0 4px 14px rgba(255, 133, 26, 0.35);
+  transform: translateY(-2px);
+}
+
+.core-value-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: #102A57;
+  margin-bottom: 0.35rem;
+}
+
+.core-value-desc {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Institutional Links Bar */
+.institutional-links-bar {
+  margin-top: 2.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.07);
+}
+
+.institutional-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.institutional-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #102A57;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.institutional-btn-pill:hover {
+  background: #102A57;
+  color: #FFFFFF;
+  border-color: #102A57;
+  box-shadow: 0 2px 6px rgba(16, 42, 87, 0.2);
+}
+
+/* 2. School Services Frontline Hub */
+.services-hub-section {
+  padding: 4.5rem 0;
+  background: var(--page-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.services-hub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .services-hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-hub-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.service-hub-card {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.service-hub-card:hover {
+  transform: translateY(-4px);
+  border-color: #FF851A;
+  box-shadow: 0 14px 26px rgba(16, 42, 87, 0.16), 0 4px 8px rgba(255, 133, 26, 0.12);
+}
+
+.service-hub-tag {
+  align-self: flex-start;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #FFF7ED;
+  color: #C25E00;
+  border: 1px solid #FFEDD5;
+  margin-bottom: 0.85rem;
+}
+
+.service-hub-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #102A57;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.service-hub-desc {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.service-hub-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  border-top: 1px solid #E2E8F0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #C25E00;
+}
+
+/* 3. Principal's Welcome & Leadership Spotlight */
+.principal-spotlight-section {
+  background: linear-gradient(135deg, #102A57 0%, #0B1E3D 100%);
+  padding: 4.5rem 0;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.principal-spotlight-section::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 133, 26, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.principal-card-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .principal-card-box {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+}
+
+.principal-avatar-wrap {
+  text-align: center;
+  position: relative;
+}
+
+.principal-badge-seal {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 3px solid #FF851A;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 0 5px rgba(255, 133, 26, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.principal-badge-seal img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.principal-title-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
+}
+
+.principal-role-title {
+  font-size: 13px;
+  color: #FF851A;
+  font-weight: 600;
+}
+
+.principal-message-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid #FF851A;
+}
+
+/* 4. On-Page 4-Step Enrollment Timeline */
+.enroll-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 640px) {
+  .enroll-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .enroll-steps-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.enroll-step-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.enroll-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #FF851A;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 2px 6px rgba(255, 133, 26, 0.4);
+}
+
+.enroll-step-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.35rem;
+}
+
+.enroll-step-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* Mobile Responsive Optimization (max-width: 768px) */
+@media (max-width: 768px) {
+  .institutional-section,
+  .services-hub-section,
+  .principal-spotlight-section {
+    padding: 2.75rem 0;
+  }
+
+  /* Core Values Cards */
+  .core-values-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .core-value-card {
+    padding: 1.15rem;
+  }
+
+  .core-value-icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.75rem;
+  }
+
+  .core-value-title {
+    font-size: 15px;
+  }
+
+  .core-value-desc {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .institutional-links-bar {
+    padding: 1rem;
+    margin-top: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .institutional-links-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .institutional-btn-pill {
+    width: 100%;
+    justify-content: space-between;
+    padding: 6px 10px;
+    font-size: 11.5px;
+  }
+
+  /* School Services Hub Cards */
+  .services-hub-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .service-hub-card {
+    padding: 1.15rem;
+  }
+
+  .service-hub-title {
+    font-size: 14px;
+    margin-bottom: 0.35rem;
+  }
+
+  .service-hub-desc {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 0.85rem;
+  }
+
+  /* Principal Spotlight */
+  .principal-card-box {
+    gap: 1.5rem;
+  }
+
+  .principal-badge-seal {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.85rem;
+  }
+
+  .principal-title-name {
+    font-size: 16px;
+  }
+
+  .principal-role-title {
+    font-size: 12px;
+  }
+
+  .principal-message-text {
+    font-size: 13px;
+    line-height: 1.6;
+    padding-left: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .principal-card-box .btn-hero-primary,
+  .principal-card-box .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Enrollment 4 Steps */
+  .enroll-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+
+  .enroll-step-item {
+    padding: 1rem;
+  }
+
+  .enroll-step-title {
+    font-size: 13px;
+  }
+
+  .enroll-step-desc {
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+}

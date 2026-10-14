@@ -1,0 +1,312 @@
+/* ==========================================================================
+   MAT-I NATIONAL HIGH SCHOOL — OFFICIAL LOGIN & PORTAL STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Standalone Portal Login Page (page-login.php)
+   -------------------------------------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.mat-i-login-body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at 50% 10%, #173A72 0%, #102A57 50%, #0b1e3d 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: #1E293B;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle background grid */
+.bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* Top Left Back to Website Button */
+.login-top-bar {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+}
+
+.back-to-home-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.back-to-home-top:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+  transform: translateX(-2px);
+}
+
+.back-to-home-top svg {
+  transition: transform 0.2s ease;
+}
+
+.back-to-home-top:hover svg {
+  transform: translateX(-3px);
+}
+
+/* Standalone Login Card */
+.standalone-login-card {
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  padding: 1.75rem 2rem 2.25rem 2rem;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  animation: cardFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-logo-wrap {
+  margin-top: 0;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+
+.login-logo-wrap a {
+  display: inline-block;
+  line-height: 1;
+}
+
+.login-logo {
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+  transition: transform 0.3s ease;
+}
+
+.login-logo:hover {
+  transform: scale(1.04);
+}
+
+.login-school-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #102A57;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.login-school-sub {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FF851A;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* Error Alert */
+.login-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #991B1B;
+  font-size: 12.5px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  text-align: left;
+  line-height: 1.4;
+}
+
+/* Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #94A3B8;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px 10px 38px;
+  font-size: 13.5px;
+  font-family: inherit;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  background-color: #FFFFFF;
+  border-color: #FF851A;
+  box-shadow: 0 0 0 3px rgba(255, 133, 26, 0.15);
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: color 0.2s ease;
+}
+
+.password-toggle-btn:hover {
+  color: #102A57;
+}
+
+.form-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.remember-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-checkbox input {
+  accent-color: #FF851A;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #FF851A;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+  color: #E06F0B;
+  text-decoration: underline;
+}
+
+.btn-submit-login {
+  width: 100%;
+  padding: 11px 16px;
+  background: linear-gradient(135deg, #102A57 0%, #173A72 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(16, 42, 87, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-submit-login:hover {
+  background: linear-gradient(135deg, #173A72 0%, #0b1e3d 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 42, 87, 0.35);
+}
+
+@media (max-width: 640px) {
+  body.mat-i-login-body {
+    padding: 4.5rem 1rem 1.5rem;
+    align-items: flex-start;
+  }
+
+  .login-top-bar {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .standalone-login-card {
+    padding: 1.5rem 1.25rem 2rem;
+  }
+
+  .login-logo {
+    width: 90px;
+    height: 90px;
+  }
+}
