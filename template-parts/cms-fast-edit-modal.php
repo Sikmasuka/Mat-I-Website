@@ -124,8 +124,8 @@ $global_data     = get_option( 'mat_i_global_settings', array() );
 							<input type="text" name="stat2_label" class="news-form-input" value="<?php echo esc_attr( $hero_data['stat2_label'] ?? '' ); ?>" placeholder="Junior & Senior High">
 						</div>
 						<div style="display: grid; grid-template-columns: 90px 1fr; gap: 8px;">
-							<input type="text" name="stat3_number" class="news-form-input" value="<?php echo esc_attr( $hero_data['stat3_number'] ?? '' ); ?>" placeholder="4 Strands" style="font-weight: 700; text-align: center;">
-							<input type="text" name="stat3_label" class="news-form-input" value="<?php echo esc_attr( $hero_data['stat3_label'] ?? '' ); ?>" placeholder="STEM · HUMSS · ABM · TVL">
+							<input type="text" name="stat3_number" class="news-form-input" value="<?php echo esc_attr( $hero_data['stat3_number'] ?? '' ); ?>" placeholder="2 Tracks" style="font-weight: 700; text-align: center;">
+							<input type="text" name="stat3_label" class="news-form-input" value="<?php echo esc_attr( $hero_data['stat3_label'] ?? '' ); ?>" placeholder="Academic · Tech-Pro">
 						</div>
 					</div>
 				</div>

@@ -16,7 +16,8 @@ get_header();
 	<?php
 	$mat_i_hero = get_option( 'mat_i_hero_settings', array() );
 	$hero_badge = ! empty( $mat_i_hero['badge'] ) ? $mat_i_hero['badge'] : 'Welcome to MAT-I NHS · DepEd Region X';
-	$hero_hdln  = ! empty( $mat_i_hero['headline'] ) ? $mat_i_hero['headline'] : "Shaping Leaders,\nBuilding Futures";
+	$hero_hdln  = ! empty( $mat_i_hero['headline'] ) ? $mat_i_hero['headline'] : 'Shaping Leaders, Building Futures';
+	$hero_hdln  = str_replace( array( "\r\n", "\r", "\n" ), ' ', $hero_hdln );
 	$hero_para  = ! empty( $mat_i_hero['paragraph'] ) ? $mat_i_hero['paragraph'] : 'MAT-I National High School provides quality, accessible, and relevant basic secondary education committed to academic competence, moral integrity, and community empowerment in Claveria, Misamis Oriental.';
 	$hero_img   = ! empty( $mat_i_hero['banner_image'] ) ? $mat_i_hero['banner_image'] : get_template_directory_uri() . '/assets/images/hero.jpg';
 	$hero_seal  = ! empty( $mat_i_hero['seal_badge'] ) ? $mat_i_hero['seal_badge'] : 'DepEd Division of Misamis Oriental';
@@ -30,8 +31,8 @@ get_header();
 	$stat1_lbl  = ! empty( $mat_i_hero['stat1_label'] ) ? $mat_i_hero['stat1_label'] : 'Year Established';
 	$stat2_num  = ! empty( $mat_i_hero['stat2_number'] ) ? $mat_i_hero['stat2_number'] : 'Grades 7–12';
 	$stat2_lbl  = ! empty( $mat_i_hero['stat2_label'] ) ? $mat_i_hero['stat2_label'] : 'Junior & Senior High';
-	$stat3_num  = ! empty( $mat_i_hero['stat3_number'] ) ? $mat_i_hero['stat3_number'] : '4 Strands';
-	$stat3_lbl  = ! empty( $mat_i_hero['stat3_label'] ) ? $mat_i_hero['stat3_label'] : 'STEM · HUMSS · ABM · TVL';
+	$stat3_num  = ! empty( $mat_i_hero['stat3_number'] ) ? $mat_i_hero['stat3_number'] : '2 Tracks';
+	$stat3_lbl  = ! empty( $mat_i_hero['stat3_label'] ) ? $mat_i_hero['stat3_label'] : 'Academic · Tech-Pro';
 	?>
 	<section class="hero-wrapper">
 		<!-- Slide Backgrounds (Hero Banner Image) -->
@@ -57,7 +58,7 @@ get_header();
 							</button>
 						<?php endif; ?>
 					</div>
-					<h1 class="hero-heading" id="heroSlideHeading"><?php echo nl2br( esc_html( $hero_hdln ) ); ?></h1>
+					<h1 class="hero-heading" id="heroSlideHeading"><?php echo esc_html( $hero_hdln ); ?></h1>
 					<p class="hero-para" id="heroSlidePara">
 						<?php echo esc_html( $hero_para ); ?>
 					</p>
@@ -74,33 +75,26 @@ get_header();
 							<span class="stat-number" id="heroStat1Num"><?php echo esc_html( $stat1_num ); ?></span>
 							<span class="stat-label" id="heroStat1Lbl"><?php echo esc_html( $stat1_lbl ); ?></span>
 						</div>
-						<div style="width: 1px; height: 26px; background: rgba(255,255,255,0.18);"></div>
+						<div class="hero-stat-divider"></div>
 						<div class="hero-stat-item">
 							<span class="stat-number" id="heroStat2Num"><?php echo esc_html( $stat2_num ); ?></span>
 							<span class="stat-label" id="heroStat2Lbl"><?php echo esc_html( $stat2_lbl ); ?></span>
 						</div>
-						<div style="width: 1px; height: 26px; background: rgba(255,255,255,0.18);"></div>
+						<div class="hero-stat-divider"></div>
 						<div class="hero-stat-item">
 							<span class="stat-number" id="heroStat3Num"><?php echo esc_html( $stat3_num ); ?></span>
 							<span class="stat-label" id="heroStat3Lbl"><?php echo esc_html( $stat3_lbl ); ?></span>
 						</div>
 					</div>
 				</div>
-
-				<!-- Right Column Image Card (Desktop Only) -->
-				<div class="hero-right-card">
-					<div style="max-width: 320px; height: 320px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 16px 36px rgba(0,0,0,0.35); margin-left: auto; border: 1px solid rgba(255,255,255,0.15);">
-						<img src="<?php echo esc_url( $hero_img ); ?>" id="heroRightImg" alt="Mat-I NHS Campus View" style="width:100%; height:100%; object-fit:cover;">
-						<div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,42,87,0.75) 0%, transparent 60%);"></div>
-					</div>
-
-					<!-- Official Seal Pill Top-Right -->
-					<div style="position: absolute; top: -8px; right: -8px; padding: 5px 12px; border-radius: 9999px; background: #FF851A; color: #FFFFFF; display: flex; align-items: center; gap: 5px; font-weight: 700; font-size: 11px; box-shadow: 0 4px 12px rgba(255,133,26,0.35);">
-						<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-						<span id="heroSealBadge"><?php echo esc_html( $hero_seal ); ?></span>
-					</div>
-				</div>
 			</div>
+		</div>
+
+		<!-- Hero Slider Navigation Dots -->
+		<div class="hero-dots-container" aria-label="Hero slider navigation">
+			<button type="button" class="hero-dot active" aria-label="Slide 1"></button>
+			<button type="button" class="hero-dot" aria-label="Slide 2"></button>
+			<button type="button" class="hero-dot" aria-label="Slide 3"></button>
 		</div>
 	</section>
 
@@ -205,45 +199,81 @@ get_header();
 			<div class="services-hub-grid">
 				<!-- Card 1 -->
 				<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="service-hub-card">
-					<span class="service-hub-tag">Official Records</span>
+					<div class="service-hub-badge-row">
+						<span class="service-hub-tag">Official Records</span>
+						<span class="service-hub-free-pill">
+							<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+							<span>Free</span>
+						</span>
+					</div>
 					<h3 class="service-hub-title">Form 137 / Form 138 (SF9 & SF10)</h3>
 					<p class="service-hub-desc">Issuance and release of permanent records, official transcript of records, and report cards for transferees or graduates.</p>
 					<div class="service-hub-meta">
-						<span>Processing: 1–3 Days</span>
-						<span>Free of Charge &rarr;</span>
+						<span style="display: inline-flex; align-items: center; gap: 4px; color: #64748B;">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+							<span>1–3 Working Days</span>
+						</span>
+						<span style="font-weight: 700; color: #FF851A;">Charter &rarr;</span>
 					</div>
 				</a>
 
 				<!-- Card 2 -->
 				<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="service-hub-card">
-					<span class="service-hub-tag">Certifications</span>
-					<h3 class="service-hub-title">Good Moral & Certificate of Enrollment</h3>
+					<div class="service-hub-badge-row">
+						<span class="service-hub-tag">Certifications</span>
+						<span class="service-hub-free-pill">
+							<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+							<span>Free</span>
+						</span>
+					</div>
+					<h3 class="service-hub-title">Good Moral & Enrollment Certificate</h3>
 					<p class="service-hub-desc">Certification of enrollment status, good moral character, CAV requirements, and graduation credentials.</p>
 					<div class="service-hub-meta">
-						<span>Processing: 15–60 Mins</span>
-						<span>Free of Charge &rarr;</span>
+						<span style="display: inline-flex; align-items: center; gap: 4px; color: #64748B;">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+							<span>15–60 Mins</span>
+						</span>
+						<span style="font-weight: 700; color: #FF851A;">Charter &rarr;</span>
 					</div>
 				</a>
 
 				<!-- Card 3 -->
 				<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="service-hub-card">
-					<span class="service-hub-tag">Admissions</span>
+					<div class="service-hub-badge-row">
+						<span class="service-hub-tag">Admissions</span>
+						<span class="service-hub-free-pill">
+							<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+							<span>Free</span>
+						</span>
+					</div>
 					<h3 class="service-hub-title">Learner Registration & LIS Validation</h3>
 					<p class="service-hub-desc">Learner Reference Number (LRN) validation, transferee verification, and basic education enrollment processing.</p>
 					<div class="service-hub-meta">
-						<span>Processing: Same Day</span>
-						<span>Free of Charge &rarr;</span>
+						<span style="display: inline-flex; align-items: center; gap: 4px; color: #64748B;">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+							<span>Same Day</span>
+						</span>
+						<span style="font-weight: 700; color: #FF851A;">Charter &rarr;</span>
 					</div>
 				</a>
 
 				<!-- Card 4 -->
 				<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="service-hub-card">
-					<span class="service-hub-tag">Student Support</span>
+					<div class="service-hub-badge-row">
+						<span class="service-hub-tag">Student Support</span>
+						<span class="service-hub-free-pill">
+							<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+							<span>Free</span>
+						</span>
+					</div>
 					<h3 class="service-hub-title">Guidance Counseling & Facilities Booking</h3>
 					<p class="service-hub-desc">Individual learner guidance, career path consultation, psychological support, and institutional facility booking.</p>
 					<div class="service-hub-meta">
-						<span>Processing: Scheduled</span>
-						<span>Free of Charge &rarr;</span>
+						<span style="display: inline-flex; align-items: center; gap: 4px; color: #64748B;">
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+							<span>Scheduled</span>
+						</span>
+						<span style="font-weight: 700; color: #FF851A;">Charter &rarr;</span>
 					</div>
 				</a>
 			</div>
@@ -253,9 +283,9 @@ get_header();
 	<!-- =========================================================================
 	     SECTION 4 — ACADEMIC PROGRAMS & CURRICULUM OFFERINGS
 	     ========================================================================= -->
-	<section id="programs" style="background: var(--page-bg); padding: 4.5rem 0; border-bottom: 1px solid var(--border-color);">
+	<section id="programs" style="background: var(--page-bg); padding: 5rem 0; border-bottom: 1px solid var(--border-color);">
 		<div class="container">
-			<div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+			<div style="max-width: 960px; margin: 0 auto 2rem; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
 				<div>
 					<span style="color: #FF851A; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;">CURRICULUM OFFERINGS</span>
 					<h2 class="section-title-navy">Academic Programs (Grades 7–12)</h2>
@@ -268,89 +298,53 @@ get_header();
 			</div>
 
 			<!-- Junior High Highlight Card -->
-			<div style="background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);">
+			<div class="jhs-highlight-card">
 				<div style="max-width: 680px;">
 					<div style="display: inline-flex; align-items: center; gap: 6px; background: #EFF6FF; color: #102A57; padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 11px; margin-bottom: 0.5rem; text-transform: uppercase; border: 1px solid #DBEAFE;">
 						<span>Junior High School · Grades 7 to 10</span>
 					</div>
-					<h3 style="font-size: 17px; font-weight: 700; color: #102A57; margin-bottom: 0.25rem;">Standard DepEd Basic Secondary Curriculum</h3>
+					<h3 style="font-size: 18px; font-weight: 700; color: #102A57; margin-bottom: 0.25rem;">Standard DepEd Basic Secondary Curriculum</h3>
 					<p style="font-size: 13px; color: #475569; line-height: 1.6;">Rigorous instruction in English, Science, Mathematics, Filipino, Araling Panlipunan, Values Education (EsP), MAPEH, and Technology & Livelihood Education (TLE).</p>
 				</div>
-				<button class="btn-hero-primary open-beef-btn" style="border: none; cursor: pointer; font-size: 12.5px; padding: 8px 16px; font-family: inherit;">
+				<button class="btn-hero-primary open-beef-btn" style="border: none; cursor: pointer; font-size: 13px; padding: 10px 20px; font-family: inherit;">
 					<span>Enroll in Junior High</span>
 				</button>
 			</div>
 
-			<!-- Senior High 4 Strands Grid -->
+			<!-- Senior High 2 Offerings Grid (Academic & Tech-Pro) -->
 			<div class="programs-grid">
-				<!-- Strand 1: STEM -->
+				<!-- Offering 1: Academic Track -->
 				<div class="program-card-item">
 					<div class="program-img-wrap">
-						<img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=220&fit=crop&auto=format" alt="STEM Strand Science Lab">
+						<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=320&fit=crop&auto=format" alt="Academic Track Senior High School">
 						<div class="program-img-overlay">
 							<span class="program-dept-name">Academic Track</span>
 						</div>
 					</div>
 					<div class="program-card-body">
-						<h3 class="program-title">STEM Strand</h3>
-						<p class="program-desc">Science, Technology, Engineering, and Mathematics. Training in calculus, physics, biology, chemistry, and empirical scientific research.</p>
+						<h3 class="program-title">Academic Track</h3>
+						<p class="program-desc">Comprehensive university preparation cultivating critical thinking, scientific inquiry, communication mastery, and foundational research for higher education and professional degree programs.</p>
 						<div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #F1F5F9; display: flex; justify-content: space-between; align-items: center;">
-							<span style="font-size: 11px; font-weight: 700; color: #102A57;">Pathways: Engr, Med, IT</span>
-							<button class="strand-details-btn" data-strand="stem" style="background: transparent; border: none; cursor: pointer; color: #FF851A; font-weight: 700; font-size: 12px; font-family: inherit;">Curriculum &rarr;</button>
+							<span style="font-size: 11px; font-weight: 700; color: #102A57;">Pathways: University Degrees & Higher Ed</span>
+							<button class="strand-details-btn" data-strand="academic" style="background: transparent; border: none; cursor: pointer; color: #FF851A; font-weight: 700; font-size: 12px; font-family: inherit;">Curriculum &rarr;</button>
 						</div>
 					</div>
 				</div>
 
-				<!-- Strand 2: HUMSS -->
+				<!-- Offering 2: Tech-Pro Track -->
 				<div class="program-card-item">
 					<div class="program-img-wrap">
-						<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=220&fit=crop&auto=format" alt="HUMSS Strand Literature & Social Sciences">
-						<div class="program-img-overlay">
-							<span class="program-dept-name">Academic Track</span>
-						</div>
-					</div>
-					<div class="program-card-body">
-						<h3 class="program-title">HUMSS Strand</h3>
-						<p class="program-desc">Humanities and Social Sciences. Cultivating critical thinking, creative writing, social dynamics, civic leadership, and public communication.</p>
-						<div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #F1F5F9; display: flex; justify-content: space-between; align-items: center;">
-							<span style="font-size: 11px; font-weight: 700; color: #102A57;">Pathways: Law, Educ, Comm</span>
-							<button class="strand-details-btn" data-strand="humss" style="background: transparent; border: none; cursor: pointer; color: #FF851A; font-weight: 700; font-size: 12px; font-family: inherit;">Curriculum &rarr;</button>
-						</div>
-					</div>
-				</div>
-
-				<!-- Strand 3: ABM -->
-				<div class="program-card-item">
-					<div class="program-img-wrap">
-						<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=220&fit=crop&auto=format" alt="ABM Strand Business Finance">
-						<div class="program-img-overlay">
-							<span class="program-dept-name">Academic Track</span>
-						</div>
-					</div>
-					<div class="program-card-body">
-						<h3 class="program-title">ABM Strand</h3>
-						<p class="program-desc">Accountancy, Business, and Management. Foundations in financial accounting, business ethics, applied economics, and entrepreneurship.</p>
-						<div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #F1F5F9; display: flex; justify-content: space-between; align-items: center;">
-							<span style="font-size: 11px; font-weight: 700; color: #102A57;">Pathways: Acctg, Mgt, Econ</span>
-							<button class="strand-details-btn" data-strand="abm" style="background: transparent; border: none; cursor: pointer; color: #FF851A; font-weight: 700; font-size: 12px; font-family: inherit;">Curriculum &rarr;</button>
-						</div>
-					</div>
-				</div>
-
-				<!-- Strand 4: TVL Track -->
-				<div class="program-card-item">
-					<div class="program-img-wrap">
-						<img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&h=220&fit=crop&auto=format" alt="TVL Track Technical Workshop">
+						<img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=320&fit=crop&auto=format" alt="Tech-Pro Track Technical Workshop">
 						<div class="program-img-overlay">
 							<span class="program-dept-name">Tech-Voc Track</span>
 						</div>
 					</div>
 					<div class="program-card-body">
-						<h3 class="program-title">TVL Track</h3>
-						<p class="program-desc">Technical-Vocational-Livelihood. National Certificate (NC) competency training in ICT, Industrial Arts, and Home Economics specializations.</p>
+						<h3 class="program-title">Tech-Pro Track (TVL)</h3>
+						<p class="program-desc">Technical-Vocational-Livelihood & Professional specialization delivering hands-on competency training, workshop mastery, and TESDA National Certificate (NC II/III) qualifications for immediate career readiness.</p>
 						<div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #F1F5F9; display: flex; justify-content: space-between; align-items: center;">
-							<span style="font-size: 11px; font-weight: 700; color: #102A57;">Pathways: TESDA NC II, IT</span>
-							<button class="strand-details-btn" data-strand="tvl" style="background: transparent; border: none; cursor: pointer; color: #FF851A; font-weight: 700; font-size: 12px; font-family: inherit;">Curriculum &rarr;</button>
+							<span style="font-size: 11px; font-weight: 700; color: #102A57;">Pathways: TESDA NC II/III, Tech Careers, Trade</span>
+							<button class="strand-details-btn" data-strand="techpro" style="background: transparent; border: none; cursor: pointer; color: #FF851A; font-weight: 700; font-size: 12px; font-family: inherit;">Curriculum &rarr;</button>
 						</div>
 					</div>
 				</div>
@@ -514,6 +508,14 @@ get_header();
 			<div id="noNewsFound" style="display: none; text-align: center; padding: 2rem; color: #64748B; font-size: 14px;">
 				No bulletins match your filter or search query.
 			</div>
+
+			<!-- View All News & Bulletins Link -->
+			<div style="margin-top: 2.75rem; text-align: center;">
+				<a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="btn-all-news" style="box-shadow: 0 4px 14px rgba(16, 42, 87, 0.08);">
+					<span>View All Bulletins & Archive</span>
+					<span style="color: #FF851A;">&rarr;</span>
+				</a>
+			</div>
 		</div>
 	</section>
 
@@ -534,7 +536,16 @@ get_header();
 	);
 	?>
 	<section id="enroll" class="enrollment-panel-grid">
-		<div class="enrollment-left-img" id="enrollmentBgImg" style="background-image: url('<?php echo esc_url( $adm_img ); ?>');"></div>
+		<div class="enrollment-left-img" id="enrollmentBgImg" style="background-image: url('<?php echo esc_url( $adm_img ); ?>');">
+			<div class="enrollment-img-overlay-tint"></div>
+			<div class="enrollment-floating-badge">
+				<div class="enrollment-badge-pulse-row">
+					<span class="enrollment-pulse-dot"></span>
+					<span class="enrollment-pulse-text">S.Y. 2025–2026 Admissions Open</span>
+				</div>
+				<div class="enrollment-badge-sub">DepEd Free Secondary Public Education · No Collection Policy</div>
+			</div>
+		</div>
 		<div class="enrollment-right-navy">
 			<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.4rem;">
 				<span style="color: #FF851A; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;" id="admissionsBadge"><?php echo esc_html( $adm_badge ); ?></span>
@@ -550,11 +561,24 @@ get_header();
 				<?php echo esc_html( $adm_desc ); ?>
 			</p>
 
-			<!-- 4-Step On-Page Visual Pathway -->
-			<div class="enroll-steps-grid" id="admissionsStepsGrid">
-				<?php foreach ( $adm_steps as $step_idx => $step ) : ?>
-					<div class="enroll-step-item">
-						<div class="enroll-step-num"><?php echo esc_html( ! empty( $step['num'] ) ? $step['num'] : ( $step_idx + 1 ) ); ?></div>
+			<!-- 4-Step On-Page Visual Pathway (2x2 Grid with Interactive Triggers) -->
+			<div class="enroll-steps-grid enroll-steps-2x2" id="admissionsStepsGrid">
+				<?php foreach ( $adm_steps as $step_idx => $step ) :
+					$step_num = ! empty( $step['num'] ) ? $step['num'] : ( $step_idx + 1 );
+					$is_beef   = ( '1' == $step_num );
+					$is_strand = ( '3' == $step_num );
+					$extra_class = $is_beef ? 'open-beef-btn' : ( $is_strand ? 'strand-details-btn' : '' );
+					$extra_attr  = $is_strand ? 'data-strand="academic"' : '';
+				?>
+					<div class="enroll-step-item <?php echo esc_attr( $extra_class ); ?>" <?php echo $extra_attr; ?> <?php if ( $is_beef || $is_strand ) echo 'role="button" tabindex="0" title="Click to view details"'; ?>>
+						<div class="enroll-step-header">
+							<div class="enroll-step-num"><?php echo esc_html( $step_num ); ?></div>
+							<?php if ( $is_beef ) : ?>
+								<span class="enroll-step-action-tag">Open Form &rarr;</span>
+							<?php elseif ( $is_strand ) : ?>
+								<span class="enroll-step-action-tag">View Tracks &rarr;</span>
+							<?php endif; ?>
+						</div>
 						<div class="enroll-step-title"><?php echo esc_html( $step['title'] ); ?></div>
 						<div class="enroll-step-desc"><?php echo esc_html( $step['desc'] ); ?></div>
 					</div>

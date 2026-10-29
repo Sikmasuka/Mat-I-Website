@@ -12,7 +12,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="icon" type="image/png" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Mat-i-logo.png' ); ?>">
-	<link rel="apple-touch-icon" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/Mat-i-logo.png' ); ?>">
+	<!-- Structured Data (Schema.org) for Institutional SEO -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "HighSchool",
+		"name": "MAT-I National High School",
+		"alternateName": "MAT-I NHS",
+		"url": "<?php echo esc_url( home_url( '/' ) ); ?>",
+		"logo": "<?php echo esc_url( get_template_directory_uri() . '/assets/images/Mat-i-logo.png' ); ?>",
+		"description": "MAT-I National High School provides quality, accessible, and relevant basic secondary education committed to academic competence and moral integrity in Claveria, Misamis Oriental.",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Mat-I",
+			"addressLocality": "Claveria",
+			"addressRegion": "Misamis Oriental",
+			"postalCode": "9004",
+			"addressCountry": "PH"
+		},
+		"department": {
+			"@type": "GovernmentOrganization",
+			"name": "Department of Education - Division of Misamis Oriental"
+		}
+	}
+	</script>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -143,11 +166,11 @@ $mat_i_yt     = ! empty( $mat_i_global['youtube_url'] ) ? $mat_i_global['youtube
 							</a>
 						</li>
 						<li>
-							<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="dropdown-item-link">
+							<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" class="dropdown-item-link">
 								<div class="dropdown-item-icon">
-									<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+									<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
 								</div>
-								<div class="dropdown-item-label">School Services</div>
+								<div class="dropdown-item-label">Campus Gallery</div>
 								<div class="dropdown-item-arrow">&rarr;</div>
 							</a>
 						</li>
@@ -235,13 +258,6 @@ $mat_i_yt     = ! empty( $mat_i_global['youtube_url'] ) ? $mat_i_global['youtube
 						</div>
 					</div>
 				</div>
-			<?php else : ?>
-				<div class="nav-link-item nav-login-item">
-					<a href="<?php echo esc_url( home_url( '/login/' ) ); ?>" class="btn-portal-login">
-						<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-						<span>Portal Login</span>
-					</a>
-				</div>
 			<?php endif; ?>
 		</nav>
 
@@ -278,9 +294,9 @@ $mat_i_yt     = ! empty( $mat_i_global['youtube_url'] ) ? $mat_i_global['youtube
 					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
 					<span>Faculty & Organigram</span>
 				</a>
-				<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" style="display: flex; align-items: center; gap: 8px; padding: 8px; font-size: 13px; color: #1D2939; text-decoration: none;">
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-					<span>School Services</span>
+				<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" style="display: flex; align-items: center; gap: 8px; padding: 8px; font-size: 13px; color: #1D2939; text-decoration: none;">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+					<span>Campus Gallery</span>
 				</a>
 				<a href="<?php echo esc_url( home_url( '/#contact' ) ); ?>" style="display: flex; align-items: center; gap: 8px; padding: 8px; font-size: 13px; color: #1D2939; text-decoration: none;">
 					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -294,47 +310,42 @@ $mat_i_yt     = ! empty( $mat_i_global['youtube_url'] ) ? $mat_i_global['youtube
 		<a href="<?php echo esc_url( home_url( '/#news' ) ); ?>" style="display: block; padding: 10px; font-weight: 500; color: #102A57; text-decoration: none;">News & Updates</a>
 		<a href="<?php echo esc_url( home_url( '/organigram/' ) ); ?>" style="display: block; padding: 10px; font-weight: 500; color: #102A57; text-decoration: none;">Organigram</a>
 
-		<!-- Mobile Portal / Login Button -->
+		<!-- Mobile Portal (Logged In Only) -->
+		<?php if ( is_user_logged_in() ) : 
+			$mob_user = wp_get_current_user();
+			$mob_is_admin = in_array( 'administrator', (array) $mob_user->roles, true );
+			$mob_badge = $mob_is_admin ? 'Admin' : 'Official';
+		?>
 		<div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #E4E7EC;">
-			<?php if ( is_user_logged_in() ) : 
-				$mob_user = wp_get_current_user();
-				$mob_is_admin = in_array( 'administrator', (array) $mob_user->roles, true );
-				$mob_badge = $mob_is_admin ? 'Admin' : 'Official';
-			?>
-				<div style="background-color: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 12px; margin-bottom: 8px;">
-					<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
-						<span style="display: flex; align-items: center; gap: 8px; font-weight: 600; color: #102A57; font-size: 13.5px;">
-							<span style="width: 8px; height: 8px; background: #10B981; border-radius: 50%; display: inline-block;"></span>
-							<?php echo esc_html( $mob_user->display_name ); ?>
-						</span>
-						<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; background: #2563EB; color: #fff; padding: 2px 8px; border-radius: 9999px;">
-							<?php echo esc_html( $mob_badge ); ?>
-						</span>
-					</div>
-					<div style="display: flex; gap: 8px; flex-wrap: wrap;">
-						<?php if ( $mob_is_admin ) : ?>
-						<button type="button" class="btn-fast-edit-section" data-section="global" style="flex: 1 1 100%; text-align: center; padding: 8px 12px; background: #FF851A; border: none; border-radius: 6px; font-size: 12.5px; font-weight: 700; color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
-							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-							<span>Edit Top Bar & Contact Info</span>
-						</button>
-						<a href="<?php echo esc_url( admin_url() ); ?>" style="flex: 1; text-align: center; padding: 8px 12px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #102A57; text-decoration: none;">
-							WP Admin
-						</a>
-						<?php endif; ?>
-						<a href="<?php echo esc_url( home_url( '/login/' ) ); ?>" style="flex: 1; text-align: center; padding: 8px 12px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #102A57; text-decoration: none;">
-							Portal
-						</a>
-						<a href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>" style="flex: 1; text-align: center; padding: 8px 12px; background: #FEE2E2; border: 1px solid #FCA5A5; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #DC2626; text-decoration: none;">
-							Log Out
-						</a>
-					</div>
+			<div style="background-color: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 12px; margin-bottom: 8px;">
+				<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+					<span style="display: flex; align-items: center; gap: 8px; font-weight: 600; color: #102A57; font-size: 13.5px;">
+						<span style="width: 8px; height: 8px; background: #10B981; border-radius: 50%; display: inline-block;"></span>
+						<?php echo esc_html( $mob_user->display_name ); ?>
+					</span>
+					<span style="font-size: 10.5px; font-weight: 700; text-transform: uppercase; background: #2563EB; color: #fff; padding: 2px 8px; border-radius: 9999px;">
+						<?php echo esc_html( $mob_badge ); ?>
+					</span>
 				</div>
-			<?php else : ?>
-				<a href="<?php echo esc_url( home_url( '/login/' ) ); ?>" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px; background-color: #102A57; color: #FFFFFF; border-radius: 8px; font-weight: 600; text-decoration: none;">
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-					<span>Official Portal Login</span>
-				</a>
-			<?php endif; ?>
+				<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+					<?php if ( $mob_is_admin ) : ?>
+					<button type="button" class="btn-fast-edit-section" data-section="global" style="flex: 1 1 100%; text-align: center; padding: 8px 12px; background: #FF851A; border: none; border-radius: 6px; font-size: 12.5px; font-weight: 700; color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+						<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+						<span>Edit Top Bar & Contact Info</span>
+					</button>
+					<a href="<?php echo esc_url( admin_url() ); ?>" style="flex: 1; text-align: center; padding: 8px 12px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #102A57; text-decoration: none;">
+						WP Admin
+					</a>
+					<?php endif; ?>
+					<a href="<?php echo esc_url( home_url( '/login/' ) ); ?>" style="flex: 1; text-align: center; padding: 8px 12px; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #102A57; text-decoration: none;">
+						Portal
+					</a>
+					<a href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>" style="flex: 1; text-align: center; padding: 8px 12px; background: #FEE2E2; border: 1px solid #FCA5A5; border-radius: 6px; font-size: 12.5px; font-weight: 600; color: #DC2626; text-decoration: none;">
+						Log Out
+					</a>
+				</div>
+			</div>
 		</div>
+		<?php endif; ?>
 	</div>
 </header>

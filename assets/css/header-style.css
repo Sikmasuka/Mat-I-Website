@@ -76,10 +76,12 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.98);
   border-bottom: 2px solid #FF851A;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: box-shadow var(--transition-normal);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 /* Offset sticky navbar when WordPress Admin Bar is present */
@@ -101,7 +103,9 @@ body.admin-bar .sticky-nav {
 }
 
 .sticky-nav.scrolled {
-  box-shadow: 0 2px 20px rgba(16, 42, 87, 0.12);
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 30px rgba(16, 42, 87, 0.12);
+  border-bottom: 2px solid #FF851A;
 }
 
 .nav-container {

@@ -371,8 +371,8 @@ function mat_i_render_theme_settings_page() {
 									<input name="mat_i_hero_settings[stat2_label]" type="text" placeholder="Junior & Senior High" value="<?php echo esc_attr( $hero['stat2_label'] ?? '' ); ?>" class="regular-text">
 								</div>
 								<div style="display: flex; gap: 10px;">
-									<input name="mat_i_hero_settings[stat3_number]" type="text" placeholder="4 Strands" value="<?php echo esc_attr( $hero['stat3_number'] ?? '' ); ?>" style="width: 120px;">
-									<input name="mat_i_hero_settings[stat3_label]" type="text" placeholder="STEM · HUMSS · ABM · TVL" value="<?php echo esc_attr( $hero['stat3_label'] ?? '' ); ?>" class="regular-text">
+									<input name="mat_i_hero_settings[stat3_number]" type="text" placeholder="2 Tracks" value="<?php echo esc_attr( $hero['stat3_number'] ?? '' ); ?>" style="width: 120px;">
+									<input name="mat_i_hero_settings[stat3_label]" type="text" placeholder="Academic · Tech-Pro" value="<?php echo esc_attr( $hero['stat3_label'] ?? '' ); ?>" class="regular-text">
 								</div>
 							</td>
 						</tr>

@@ -48,7 +48,8 @@ $mat_i_copy    = ! empty( $mat_i_global['copyright_text'] ) ? $mat_i_global['cop
 					<li><a href="<?php echo esc_url( home_url( '/history/' ) ); ?>" class="footer-link-item"><span style="color: #FF851A;">›</span> History & Heritage</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/organigram/' ) ); ?>" class="footer-link-item"><span style="color: #FF851A;">›</span> Faculty & Staff Directory</a></li>
 					<li><a href="<?php echo esc_url( home_url( '/school-logo/' ) ); ?>" class="footer-link-item"><span style="color: #FF851A;">›</span> School Seal & Symbolism</a></li>
-					<li><a href="<?php echo esc_url( home_url( '/#news' ) ); ?>" class="footer-link-item"><span style="color: #FF851A;">›</span> News & Announcements</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" class="footer-link-item"><span style="color: #FF851A;">›</span> Campus Photo Gallery</a></li>
+					<li><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="footer-link-item"><span style="color: #FF851A;">›</span> News & Announcements</a></li>
 				</ul>
 			</div>
 
@@ -120,7 +121,9 @@ $mat_i_copy    = ! empty( $mat_i_global['copyright_text'] ) ? $mat_i_global['cop
 
 		<!-- Footer Bottom Bar -->
 		<div class="footer-bottom-bar">
-			<div id="footerCopyText"><?php echo esc_html( $mat_i_copy ); ?></div>
+			<div id="footerCopyText">
+				<a href="<?php echo esc_url( home_url( '/login/' ) ); ?>" style="color: inherit; text-decoration: none; cursor: default;" aria-label="Portal">©</a> <?php echo esc_html( preg_replace( '/^[©\s]+/u', '', $mat_i_copy ) ); ?>
+			</div>
 			<div class="footer-bottom-links" style="display: flex; gap: 1.25rem;">
 				<a href="#">DepEd Portal</a>
 				<a href="#">Transparency Seal</a>

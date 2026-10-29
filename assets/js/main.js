@@ -150,9 +150,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const heroBgs = document.querySelectorAll('.hero-slide-bg');
   const heroDots = document.querySelectorAll('.hero-dot');
   const heroHeadings = [
-    "Shaping Leaders,\nBuilding Futures",
-    "Your Journey\nStarts Here",
-    "Transforming Lives\nThrough Education"
+    "Shaping Leaders, Building Futures",
+    "Your Journey Starts Here",
+    "Transforming Lives Through Education"
   ];
   const heroBadges = [
     "Welcome to MAT-I NHS",
@@ -281,6 +281,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 7. Strand Curriculum Modal Logic
   const strandData = {
+    academic: {
+      track: 'Academic Track',
+      title: 'Academic Track (Senior High School)',
+      desc: 'The Academic Track prepares learners for university education and specialized college degrees through comprehensive coursework across humanities, sciences, communication, and foundational research methodologies.',
+      subjects: [
+        'Oral and Written Communication in Context',
+        'General Mathematics, Statistics & Probability',
+        'Earth & Life Science, Physical Science',
+        'Empirical Practical Research 1 & 2 / Inquiries',
+        'Introduction to Philosophy & Human Person',
+        'Contemporary Philippine Arts & Regional Studies',
+        'Understanding Culture, Society, and Politics'
+      ],
+      pathways: 'University Baccalaureate Degrees (Education, Arts & Sciences, Allied Health, Business Administration, Engineering Foundations, Law, Social Work).'
+    },
+    techpro: {
+      track: 'Tech-Voc Track',
+      title: 'Tech-Pro Track (Technical-Vocational-Livelihood)',
+      desc: 'The Tech-Pro (TVL) Track equips students with job-ready practical competencies, technical proficiencies, and TESDA National Certificate (NC II/III) qualifications for immediate career entry, trade entrepreneurship, and polytechnic studies.',
+      subjects: [
+        'Information & Communications Technology (ICT) / CSS NC II',
+        'Computer Systems Servicing & Network Maintenance',
+        'Electrical Installation & Maintenance / Technical Trade',
+        'Home Economics, Industrial Arts & Workshop Safety',
+        'Work Immersion in Certified Industry Partner Hubs',
+        'Applied Entrepreneurship in Technical Trades',
+        'Practical Technical Research & Innovations'
+      ],
+      pathways: 'TESDA National Certificate (NC II/III) Certified Specialist, IT & Hardware Support, Technical Trades, Polytech Degree Programs, Self-Employed Entrepreneur.'
+    },
     stem: {
       track: 'Academic Track',
       title: 'Science, Technology, Engineering, and Mathematics (STEM)',
@@ -758,7 +788,7 @@ document.addEventListener('DOMContentLoaded', function () {
               const rightImg = document.getElementById('heroRightImg');
 
               if (badge && clean.badge) badge.textContent = clean.badge;
-              if (heading && clean.headline) heading.innerHTML = clean.headline.replace(/\n/g, '<br>');
+              if (heading && clean.headline) heading.textContent = clean.headline.replace(/[\r\n]+/g, ' ');
               if (para && clean.paragraph) para.textContent = clean.paragraph;
               if (cta1 && clean.cta1_text) cta1.querySelector('span').textContent = clean.cta1_text;
               if (cta2 && clean.cta2_text) cta2.textContent = clean.cta2_text;

@@ -32,14 +32,15 @@ function mat_i_theme_scripts() {
 	wp_enqueue_style( 'mat-i-hero-style', $css_uri . 'hero-style.css', array( 'mat-i-header-style' ), '1.0.0' );
 	wp_enqueue_style( 'mat-i-features-style', $css_uri . 'features-style.css', array( 'mat-i-hero-style' ), '1.0.0' );
 	wp_enqueue_style( 'mat-i-news-style', $css_uri . 'news-style.css', array( 'mat-i-features-style' ), '1.0.0' );
-	wp_enqueue_style( 'mat-i-about-style', $css_uri . 'about-style.css', array( 'mat-i-news-style' ), '1.0.2' );
+	wp_enqueue_style( 'mat-i-about-style', $css_uri . 'about-style.css', array( 'mat-i-news-style' ), '1.0.3' );
 	wp_enqueue_style( 'mat-i-school-logo-style', $css_uri . 'school-logo-style.css', array( 'mat-i-about-style' ), '1.0.0' );
 	wp_enqueue_style( 'mat-i-mission-vision-style', $css_uri . 'mission-vision-style.css', array( 'mat-i-school-logo-style' ), '1.0.0' );
 	wp_enqueue_style( 'mat-i-history-style', $css_uri . 'history-style.css', array( 'mat-i-mission-vision-style' ), '1.0.0' );
 	wp_enqueue_style( 'mat-i-organigram-style', $css_uri . 'organigram-style.css', array( 'mat-i-history-style' ), '1.0.0' );
 	wp_enqueue_style( 'mat-i-services-style', $css_uri . 'services-style.css', array( 'mat-i-organigram-style' ), '1.0.0' );
-	wp_enqueue_style( 'mat-i-video-style', $css_uri . 'video-style.css', array( 'mat-i-services-style' ), '1.0.0' );
-	wp_enqueue_style( 'mat-i-programs-style', $css_uri . 'programs-style.css', array( 'mat-i-video-style' ), '1.0.0' );
+	wp_enqueue_style( 'mat-i-gallery-style', $css_uri . 'gallery-style.css', array( 'mat-i-services-style' ), '1.0.0' );
+	wp_enqueue_style( 'mat-i-video-style', $css_uri . 'video-style.css', array( 'mat-i-gallery-style' ), '1.0.0' );
+	wp_enqueue_style( 'mat-i-programs-style', $css_uri . 'programs-style.css', array( 'mat-i-video-style' ), '1.0.3' );
 	wp_enqueue_style( 'mat-i-app-style', $css_uri . 'app-style.css', array( 'mat-i-programs-style' ), '1.0.0' );
 	wp_enqueue_style( 'mat-i-footer-style', $css_uri . 'footer-style.css', array( 'mat-i-app-style' ), '1.0.0' );
 

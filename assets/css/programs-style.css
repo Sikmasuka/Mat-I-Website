@@ -5,84 +5,113 @@
 .programs-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
-@media (min-width: 580px) {
+@media (min-width: 640px) {
   .programs-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 460px));
+    justify-content: center;
   }
 }
 
 @media (min-width: 960px) {
   .programs-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 460px));
+    justify-content: center;
   }
+}
+
+.jhs-highlight-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 1.6rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  box-shadow: 0 4px 16px rgba(16, 42, 87, 0.04);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .program-card-item {
   background-color: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(16, 42, 87, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
 }
 
 .program-card-item:hover {
   transform: translateY(-4px);
-  border-color: #94A3B8;
-  box-shadow: 0 14px 28px rgba(16, 42, 87, 0.16), 0 4px 8px rgba(16, 42, 87, 0.08);
+  border-color: #FF851A;
+  box-shadow: 0 16px 32px rgba(16, 42, 87, 0.12), 0 4px 10px rgba(255, 133, 26, 0.1);
 }
 
 .program-img-wrap {
   position: relative;
-  height: 140px;
+  height: 185px;
 }
 
 .program-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.program-card-item:hover .program-img-wrap img {
+  transform: scale(1.05);
 }
 
 .program-img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(16, 42, 87, 0.85) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(16, 42, 87, 0.88) 0%, transparent 100%);
   display: flex;
   align-items: flex-end;
   padding: 0.75rem 1rem;
 }
 
 .program-dept-name {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 11px;
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .program-card-body {
-  padding: 0.95rem;
+  padding: 1.15rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .program-title {
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--navy-primary);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 
 .program-desc {
-  font-size: 11.5px;
-  color: #64748B;
-  line-height: 1.5;
-  margin-bottom: 0.95rem;
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 1rem;
 }
 
 /* ENROLLMENT CTA */

@@ -21,8 +21,16 @@ function mat_i_custom_rewrite_rules() {
 	add_rewrite_rule( '^history/?$', 'index.php?mat_i_page=history', 'top' );
 	add_rewrite_rule( '^organigram/?$', 'index.php?mat_i_page=organigram', 'top' );
 	add_rewrite_rule( '^services/?$', 'index.php?mat_i_page=services', 'top' );
+	add_rewrite_rule( '^gallery/?$', 'index.php?mat_i_page=gallery', 'top' );
+	add_rewrite_rule( '^news/?$', 'index.php?mat_i_page=news', 'top' );
+	add_rewrite_rule( '^news/page/([0-9]+)/?$', 'index.php?mat_i_page=news&paged=$matches[1]', 'top' );
 	add_rewrite_rule( '^login/?$', 'index.php?mat_i_page=login', 'top' );
 	add_rewrite_rule( '^portal/?$', 'index.php?mat_i_page=login', 'top' );
+
+	if ( get_option( 'mat_i_rewrite_ver' ) !== '1.0.3' ) {
+		flush_rewrite_rules( false );
+		update_option( 'mat_i_rewrite_ver', '1.0.3' );
+	}
 }
 add_action( 'init', 'mat_i_custom_rewrite_rules' );
 
@@ -72,6 +80,20 @@ function mat_i_custom_template_include( $template ) {
 
 	if ( 'services' === $mat_i_page || is_page( 'services' ) || false !== strpos( $req_uri, '/services' ) ) {
 		$custom = locate_template( array( 'page-services.php' ) );
+		if ( $custom ) {
+			return $custom;
+		}
+	}
+
+	if ( 'gallery' === $mat_i_page || is_page( 'gallery' ) || false !== strpos( $req_uri, '/gallery' ) ) {
+		$custom = locate_template( array( 'page-gallery.php' ) );
+		if ( $custom ) {
+			return $custom;
+		}
+	}
+
+	if ( 'news' === $mat_i_page || is_page( 'news' ) || is_page( 'announcements' ) || false !== strpos( $req_uri, '/news' ) ) {
+		$custom = locate_template( array( 'page-news.php' ) );
 		if ( $custom ) {
 			return $custom;
 		}
